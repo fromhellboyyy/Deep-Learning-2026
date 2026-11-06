@@ -1,0 +1,68 @@
+{
+  "track": "cv",
+  "model": "yolo26n.pt",
+  "revision": "ultralytics==8.4.203; sha256=9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "dataset": "Hard Hat Workers v14 (head class only), Public Domain, https://universe.roboflow.com/joseph-nelson/hard-hat-workers",
+  "classes": [
+    "head"
+  ],
+  "n_train": 4916,
+  "n_val": 1413,
+  "n_test": null,
+  "params_total": 2572280,
+  "baseline": {
+    "split": "val",
+    "coco_map50": 0.011716300452867097,
+    "heuristic_map50": 0.00018031737780224987,
+    "heuristic_ap50_per_class": {
+      "head": 0.00018031737780224987
+    }
+  },
+  "final": {
+    "map50": 0.9801088762455028,
+    "map50_95": 0.6680114550751901,
+    "precision": 0.9567428945296399,
+    "recall": 0.9434501142421935,
+    "per_class": {
+      "head": 0.6680114550751901
+    }
+  },
+  "ablation": {
+    "change": "imgsz 640 (baseline был 320)",
+    "baseline_map50": 0.9801088762455028,
+    "ablation_map50": 0.9801088762455028,
+    "baseline_map50_95": 0.6680114550751901,
+    "ablation_map50_95": 0.6680114550751901,
+    "baseline_time": 2504.9792746520006,
+    "ablation_time": 2568.5230091989997
+  },
+  "errors": {
+    "tp": 5034,
+    "class": 0,
+    "localization": 33,
+    "background": 344,
+    "missed": 0
+  },
+  "device": "Tesla T4",
+  "train_time_sec": 2504.9792746520006,
+  "fast_mode": false,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 16,
+    "optimizer": "auto",
+    "lr0": 0.01,
+    "patience": 10,
+    "augment": true,
+    "flipud": 0.0,
+    "fliplr": 0.5,
+    "mosaic": 1.0,
+    "mixup": 0.0,
+    "copy_paste": 0.0
+  },
+  "run_times": {
+    "heuristic": 2.31974230600008,
+    "train": 2504.9792746520006,
+    "ablation": 2568.5230091989997
+  }
+}
